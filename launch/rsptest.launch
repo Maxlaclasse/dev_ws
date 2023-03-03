@@ -1,0 +1,12 @@
+<launch>
+  <!-- Declare arguments -->
+  <arg name="use_sim_time" default="false"/>
+
+  <!-- Load URDF file -->
+  <param name="robot_description" textfile="$(find e_gallery_ros)/description/robot.urdf"/>
+
+  <!-- Create robot state publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <param name="use_sim_time" value="$(arg use_sim_time)"/>
+  </node>
+</launch>
