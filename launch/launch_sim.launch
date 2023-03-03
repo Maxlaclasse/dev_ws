@@ -3,13 +3,13 @@
   <!-- launch the first launcher which establish the robot_description param-->
   <arg name="use_sim_time" default="true"/>
     
-  <node name="rsptest.launch" pkg="e_gallery_ros" type="rsptest.launch"></node>
+  <include file="$(find e_gallery_ros)/launch/rsptest.launch"/>
 
   <!-- launch gazebo -->
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find gazebo_ros)/worlds/empty.world"/>
-    <arg name="gui" value="false"/>
+    <arg name="gui" value="true"/>
   </include>
 
   <!-- Spawn the robot model in Gazebo -->
