@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Declare arguments -->
-  <arg name="use_sim_time" default="false"/>
+  <arg name="use_sim_time" default="true"/>
 
   <!-- Process the Xacro file -->
   <xacro file="$(find e_gallery_ros)/description/robot.urdf.xacro" output="robot.urdf"/>
@@ -13,5 +13,4 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
     <param name="use_sim_time" value="$(arg use_sim_time)"/>
   </node>
-  <node name="rviz" pkg="rviz" type="rviz" />
 </launch>

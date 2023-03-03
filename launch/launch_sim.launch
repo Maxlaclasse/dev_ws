@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- launch the first launcher which establish the robot_description param-->
+  <arg name="use_sim_time" default="true"/>
+    
+  <node name="rsptest.launch" pkg="e_gallery_ros" type="rsptest.launch"></node>
+
+  <!-- launch gazebo -->
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find gazebo_ros)/worlds/empty.world"/>
+    <arg name="gui" value="false"/>
+  </include>
+
+  <!-- Spawn the robot model in Gazebo -->
+  <node name="spawn_urdf_model" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -param robot_description -model my_robot_model" />
+
+</launch>
+
