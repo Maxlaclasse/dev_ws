@@ -1,6 +1,6 @@
 <launch>
   <!-- Declare arguments -->
-  <arg name="use_sim_time" default="false"/>
+  <arg name="use_sim_time" default="true"/>
 
   <!-- Load URDF file -->
   <param name="robot_description" textfile="$(find e_gallery_ros)/description/robot.urdf"/>

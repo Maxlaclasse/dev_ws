@@ -1,0 +1,7 @@
+image: /home/maximer/dev_ws/src/e_gallery_ros/maps/test_map.pgm
+resolution: 0.050000
+origin: [-2.915123, -3.957357, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

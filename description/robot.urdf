@@ -25,6 +25,14 @@
   <link name="base_link">
 
     </link>
+  <!--BASE_FOOTPRINT LINK-->
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <link name="base_footprint">
+    </link>
   <!-- CHASSIS LINK -->
   <joint name="chassis_joint" type="fixed">
     <parent link="base_link"/>
@@ -211,7 +219,7 @@
         <range>
           <min>0.3</min>
           <max>12</max>
-          <resolution>0.001</resolution>
+          <resolution>0.01</resolution>
         </range>
       </ray>
       <plugin filename="libgazebo_ros_laser.so" name="laser_controller">
