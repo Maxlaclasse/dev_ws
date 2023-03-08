@@ -2,13 +2,17 @@
 <launch>
   <!-- launch the first launcher which establish the robot_description param-->
   <arg name="use_sim_time" default="true"/>
+
+  <node name="xacro" pkg="xacro" type="xacro" args="/home/maximer/dev_ws/src/e_gallery_ros/description/robot.urdf.xacro -o /home/maximer/dev_ws/src/e_gallery_ros/description/robot.urdf"/>
+
+
     
   <include file="$(find e_gallery_ros)/launch/rsptest.launch"/>
 
   <!-- launch gazebo -->
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find gazebo_ros)/worlds/empty.world"/>
+    <arg name="world_name" value="/home/maximer/dev_ws/src/e_gallery_ros/worlds/obstacles.world"/>
     <arg name="gui" value="true"/>
   </include>
 
