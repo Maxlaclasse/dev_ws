@@ -1,6 +1,8 @@
 command for convertir xacro into urdf :
 rosrun xacro xacro ~/dev_ws/src/e_gallery_ros/description/robot.urdf.xacro > ~/dev_ws/src/e_gallery_ros/description/robot.urdf
 
+for slam_toolbox roslaunch slam_toolbox online_async.launch params_file:=./src/e_gallery_ros/config/mapper_params_online_async.yaml use_sim_time:=true 2> >(grep -v TF_REPEATED_DATA buffer_core)
+
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
